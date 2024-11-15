@@ -133,11 +133,15 @@ public class Program
         bool answer = false;
 
         // code here
-        double a = Math.Sqrt(2*s, 0.5);
-        double d = 2*Math.Sqrt(Math.PI*r, 0.5)/Math.PI;
-        if (a <= d)
+        double radius = r / Math.PI;
+        double half_diagonal = (Math.Sqrt(s / 2)) / 2;
+        if (half_diagonal <= radius)
         {
             answer = true;
+        }
+        else
+        {
+            answer = false;
         }
         // end
 
@@ -148,11 +152,15 @@ public class Program
         bool answer = false;
 
         // code here
-        double a = Math.Sqrt(s, 0.5) / 2.0;
-        double R = Math.Sqrt(r/Math.PI, 0.5);
-        if (a >= R)
+        double diameter = 2 * Math.Sqrt((r / Math.PI));
+        double side = Math.Sqrt(s);
+        if (diameter < side)
         {
-           answer = true;
+            answer = true;
+        }
+        else
+        {
+            answer = false;
         }
         // end
 
@@ -427,7 +435,7 @@ public class Program
             for (int i = 0; i <= n - 1; i++)
             {
                 double R = double.Parse(Console.ReadLine());
-                if (rez <= answer)
+                if (R <= answer)
                 {
                     answer = R;
                 }
